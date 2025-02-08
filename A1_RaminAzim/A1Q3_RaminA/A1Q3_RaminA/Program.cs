@@ -13,9 +13,9 @@ using System.Threading.Tasks;
 
 namespace A1Q3_RaminA
 {
-    internal class Program
+    class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
         Console.WriteLine(
         "                   The Rat Race - By Ramin\n\n" +
