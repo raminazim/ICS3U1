@@ -15,7 +15,7 @@ namespace A1Q3_RaminA
 {
     internal class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
         Console.WriteLine(
         "                   The Rat Race - By Ramin\n\n" +
