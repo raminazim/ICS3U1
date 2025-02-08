@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace A1Q3_RaminA
 {
-    class Program
+    internal class Program
 {
     static void Main()
     {
