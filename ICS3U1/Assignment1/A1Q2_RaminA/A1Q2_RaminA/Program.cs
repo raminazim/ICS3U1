@@ -387,6 +387,8 @@ namespace A1Q2_RaminA
 
             //Line 26
             Console.Write("                                        @@@@@@@                                                                                  @@@@@@@@ \n");
+
+            Console.ReadKey();
         }
     }
 }
