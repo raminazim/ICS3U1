@@ -30,8 +30,8 @@ namespace A1Q3_RaminA
         "                 A finish line that moves ahead,\n" +
         "               A life half-lived, a path we tread.\n" +
         "               Slow down, breathe, break the chain,\n" +
-        "                 Find the sun beyond the rain.\n\n\n"
-        );
+        "                 Find the sun beyond the rain."
+        ); // The + is automatically added when u press enter and the code didn't work when u dont use it.
 
         Console.ReadKey();
         }

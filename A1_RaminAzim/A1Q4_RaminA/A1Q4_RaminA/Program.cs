@@ -18,7 +18,7 @@ namespace A1Q4_RaminA
         {
 
             Console.WriteLine("AMEN");
-            Console.WriteLine("By Drake \n");
+            Console.WriteLine("By Drake");
             Console.WriteLine("                      to say thank You That's                      ");
             Console.WriteLine("                 all, I don't wanna ask for anything,                 ");
             Console.WriteLine("               I just wanna say thank You, Lord Thank              ");

@@ -17,6 +17,8 @@ namespace A1Q2_RaminA
     {
         static void Main(string[] args)
         {
+            // Basically the code is displaying the character, every console.writeline makes a new line. in between that, the new characters are deemed with new colours
+
             //Line 1
             Console.Write("                                                                      .................                                                                                       \n");
 
