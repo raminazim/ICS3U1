@@ -14,25 +14,25 @@ namespace A2Q4DigCalcRA
         static void Main(string[] args)
         {
             // Declaration
-            string strUserInput;
-            int number, intThousands, intHundreds, intTens, intOnes;
+                string strUserInput;
+                int number, intThousands, intHundreds, intTens, intOnes;
 
             // Input
-            Console.Write("Enter a four-digit number: ");
-            strUserInput = Console.ReadLine();
-            number = int.Parse(strUserInput);
+                Console.Write("Enter a four-digit number: ");
+                strUserInput = Console.ReadLine();
+                number = Int32.Parse(strUserInput);
 
             // Process
-            intThousands = number / 1000;
-            intHundreds = (number % 1000) / 100;
-            intTens = (number % 100) / 10;
-            intOnes = number % 10;
+                intThousands = number / 1000;
+                intHundreds = (number % 1000) / 100;
+                intTens = (number % 100) / 10;
+                intOnes = number % 10;
 
             // Output
-            Console.WriteLine("1000s: " + intThousands);
-            Console.WriteLine("100s: " + intHundreds);
-            Console.WriteLine("10s: " + intTens);
-            Console.WriteLine("1s: " + intOnes);
+                Console.WriteLine("1000s: " + intThousands);
+                Console.WriteLine("100s: " + intHundreds);
+                Console.WriteLine("10s: " + intTens);
+                Console.WriteLine("1s: " + intOnes);
 
             Console.ReadKey();
         }

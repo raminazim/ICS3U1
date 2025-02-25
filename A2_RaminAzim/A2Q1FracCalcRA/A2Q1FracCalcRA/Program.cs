@@ -18,27 +18,27 @@ namespace A2Q1FracCalcRA
         static void Main(string[] args)
         {
             //Declaration
-            int intNumerator, intDenominator, intWholeNumber;
-            string strUserInput;
+                string strUserInput;
+                int intNumerator, intDenominator, intWholeNumber;
 
             //Input
-            Console.Write("Enter the numerator: ");
-            strUserInput = Console.ReadLine();
-            intNumerator = int.Parse(strUserInput);
+                Console.Write("Enter the numerator: ");
+                strUserInput = Console.ReadLine();
+                intNumerator = Int32.Parse(strUserInput);
 
-            Console.Write("Enter the denominator: ");
-            strUserInput = Console.ReadLine();
-            intDenominator = int.Parse(strUserInput);
+                Console.Write("Enter the denominator: ");
+                strUserInput = Console.ReadLine();
+                intDenominator = Int32.Parse(strUserInput);
 
             //Process
-            intWholeNumber = intNumerator / intDenominator;
-            intNumerator = intNumerator % intDenominator;
+                intWholeNumber = intNumerator / intDenominator;
+                intNumerator = intNumerator % intDenominator;
 
 
             //Output
-            Console.WriteLine("   " + intNumerator);
-            Console.WriteLine(intWholeNumber + " ---");
-            Console.WriteLine("   " + intDenominator);
+                Console.WriteLine("   " + intNumerator);
+                Console.WriteLine(intWholeNumber + " ---");
+                Console.WriteLine("   " + intDenominator);
 
             Console.ReadKey();
         }

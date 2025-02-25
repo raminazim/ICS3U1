@@ -1,0 +1,406 @@
+Q1:
+/*
+ * Name: Ramin
+ * Date: 02/24/25
+ * Title: Fraction Calculator
+ * Purpose: Convert imporoper fraction into mixed number
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace A2Q1FracCalcRA
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Declaration
+                string strUserInput;
+                int intNumerator, intDenominator, intWholeNumber;
+
+            //Input
+                Console.Write("Enter the numerator: ");
+                strUserInput = Console.ReadLine();
+                intNumerator = Int32.Parse(strUserInput);
+
+                Console.Write("Enter the denominator: ");
+                strUserInput = Console.ReadLine();
+                intDenominator = Int32.Parse(strUserInput);
+
+            //Process
+                intWholeNumber = intNumerator / intDenominator;
+                intNumerator = intNumerator % intDenominator;
+
+
+            //Output
+                Console.WriteLine("   " + intNumerator);
+                Console.WriteLine(intWholeNumber + " ---");
+                Console.WriteLine("   " + intDenominator);
+
+            Console.ReadKey();
+        }
+    }
+}
+
+
+Q2:
+/*
+ * Name: Ramin
+ * Date: 02/24/25
+ * Title: Dollar Denotation Calculator
+ * Purpose: Find dollar denotation of given number
+ */
+
+using System;
+
+namespace A2Q2DolDenCalcRA
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Declaration
+                string strUserInput;
+                int intHundo, intFifty, intTwenty, intTen, intFive, intToonie, intLoonie, intBal;
+
+            // Input
+                Console.Write("Enter the amount of money: ");
+                strUserInput = Console.ReadLine();
+                intBal = Int32.Parse(strUserInput);
+
+            // Process
+
+                // Hundred
+                intHundo = intBal / 100;
+                intBal %= 100;
+
+                // Fifty
+                 intFifty = intBal / 50;
+                 intBal %= 50;
+
+                 // Twenty
+                 intTwenty = intBal / 20;
+                 intBal %= 20;
+
+                 // Ten
+                intTen = intBal / 10;
+                intBal %= 10;
+
+                // Five
+                intFive = intBal / 5;
+                intBal %= 5;
+
+                // Toonie
+                intToonie = intBal / 2;
+                intBal %= 2;
+
+                // Loonie
+                intLoonie = intBal;
+
+            // Output
+                Console.WriteLine("Hundred: " + intHundo);
+                Console.WriteLine("Fifty: " + intFifty);
+                Console.WriteLine("Twenty: " + intTwenty);
+                Console.WriteLine("Ten: " + intTen);
+                Console.WriteLine("Five: " + intFive);
+                Console.WriteLine("Toonie: " + intToonie);
+                Console.WriteLine("Loonie: " + intLoonie);
+
+            Console.ReadKey();
+        }
+    }
+}
+
+Q3:
+/*
+ * Name: Ramin
+ * Date: 02/24/25
+ * Title: Trigonometry Calculator
+ * Purpose: Find area perimeter of triangle
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace A2Q3TrigCalcRA
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Declaration
+                string strUserInput, strUnit;
+                double dblSideA, dblSideB, dblSideC, DblArea, dblPerimeter;
+
+            //Input
+                Console.Write("Side A: ");
+                strUserInput = Console.ReadLine();
+                dblSideA = Double.Parse(strUserInput);
+
+                Console.Write("Side B: ");
+                strUserInput = Console.ReadLine();
+                dblSideB = Double.Parse(strUserInput);
+
+                Console.Write("Unit of Measurement: ");
+                strUserInput = Console.ReadLine();
+                strUnit = strUserInput;
+
+            //Process
+
+                //Area
+                DblArea = 0.5 * dblSideA * dblSideB;
+
+                //Perimeter
+                dblSideC = Math.Sqrt(Math.Pow(dblSideA, 2) + Math.Pow(dblSideB, 2));
+                dblPerimeter = dblSideA + dblSideB + dblSideC;
+
+            //Output
+                Console.WriteLine("Area: " +DblArea+strUnit+ "^2");
+                Console.WriteLine("Perimeter: " +dblPerimeter+strUnit);
+
+            Console.ReadKey();
+        }
+    }
+}
+
+
+Q4:
+/*
+ * Name: Ramin
+ * Date: 02/24/25
+ * Title: Digit Calculator
+ * Purpose: Separate digits of a 4 digit number
+*/
+
+using System;
+
+namespace A2Q4DigCalcRA
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Declaration
+                string strUserInput;
+                int number, intThousands, intHundreds, intTens, intOnes;
+
+            // Input
+                Console.Write("Enter a four-digit number: ");
+                strUserInput = Console.ReadLine();
+                number = Int32.Parse(strUserInput);
+
+            // Process
+                intThousands = number / 1000;
+                intHundreds = (number % 1000) / 100;
+                intTens = (number % 100) / 10;
+                intOnes = number % 10;
+
+            // Output
+                Console.WriteLine("1000s: " + intThousands);
+                Console.WriteLine("100s: " + intHundreds);
+                Console.WriteLine("10s: " + intTens);
+                Console.WriteLine("1s: " + intOnes);
+
+            Console.ReadKey();
+        }
+    }
+}
+
+Q5:
+/*
+ * Name: Ramin 
+ * Date: 02/24/25
+ * Title: Mortgage Calculator
+ * Purpose: Calculate Mortgage Payment
+ */
+using System;
+
+namespace A2Q5MortCalcRA
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Declaration
+                string strUserInput;
+                double dblPrincipal, dblRate, dblMonthlyPayment, dblNumerator, dblDenominator;
+                int intPaymentPerYear, intYear, intTotalPayments;
+
+            // Input
+                //Principal
+                Console.Write("Principal: ");
+                strUserInput = Console.ReadLine();
+                dblPrincipal = Double.Parse(strUserInput);
+            
+                //Rate
+                Console.Write("Interest Rate (%): ");
+                strUserInput = Console.ReadLine();
+                dblRate = Double.Parse(strUserInput) / 100;
+
+                //lPayments/Yr
+                Console.Write("Payments per year: ");
+                strUserInput = Console.ReadLine();
+                intPaymentPerYear = Int32.Parse(strUserInput);
+
+                //# of Years
+                Console.Write("Number of years: ");
+                strUserInput = Console.ReadLine();
+                intYear = Int32.Parse(strUserInput);
+
+            // Process
+                intTotalPayments = intPaymentPerYear * intYear;
+                dblNumerator = dblPrincipal * (dblRate / intPaymentPerYear);
+                dblDenominator = 1 - Math.Pow((1 + (dblRate / intPaymentPerYear)), -intTotalPayments);
+                dblMonthlyPayment = dblNumerator / dblDenominator;
+
+            // Output (formatted to 2 decimal places)
+                Console.WriteLine("Monthly Payment: $" + dblMonthlyPayment);
+
+            Console.ReadKey();
+        }
+    }
+}
+
+Q6:
+/*
+ * Name: Ramin 
+ * Date: 02/24/25
+ * Title: Mortgage Income Calculator
+ * Purpose: Find needed income for mortgage
+ */
+using System;
+
+namespace A2Q6MortIncCalcRA
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Declaration
+                string strUserInput;
+                double dblHousePrice, dblDownPayment, dblLoanAmount, dblRate, dblMonthlyPayment, dblNumerator, dblDenominator, dblNetMonthly, dblGrossMonthly, dblGrossAnnual;
+                int intPaymentPerYear, intYear, intTotalPayments;
+                double dblIncomeTaxRate = 0.30; // 30% tax rate
+                double dblHousingRatio = 1.0 / 3.0; // Housing = 1/3 of take-home income
+
+            // Input
+
+                // House Input
+                Console.Write("House Price: ");
+                strUserInput = Console.ReadLine();
+                dblHousePrice = double.Parse(strUserInput);
+
+                Console.Write("Down Payment: ");
+                strUserInput = Console.ReadLine();
+                dblDownPayment = double.Parse(strUserInput);
+
+                dblLoanAmount = dblHousePrice - dblDownPayment; //Loan amount
+
+                //Mortage Input
+                Console.Write("Interest Rate (%): ");
+                strUserInput = Console.ReadLine();
+                dblRate = double.Parse(strUserInput) / 100;
+
+                Console.Write("Payments per year: ");
+                strUserInput = Console.ReadLine();
+                intPaymentPerYear = int.Parse(strUserInput);
+    
+                Console.Write("Number of years: ");
+                strUserInput = Console.ReadLine();
+                intYear = int.Parse(strUserInput);
+
+            // Process
+                //Mortgage
+                intTotalPayments = intPaymentPerYear * intYear;
+                dblNumerator = dblLoanAmount * (dblRate / intPaymentPerYear);
+                dblDenominator = 1 - Math.Pow((1 + (dblRate / intPaymentPerYear)), -intTotalPayments);
+                dblMonthlyPayment = dblNumerator / dblDenominator;
+
+                // Monthly Net Income
+                dblNetMonthly = dblMonthlyPayment / dblHousingRatio;
+
+                // Monthly Gross Income
+                dblGrossMonthly = dblNetMonthly / (1 - dblIncomeTaxRate);
+
+                // Annual Gross Income
+                dblGrossAnnual = dblGrossMonthly * 12;
+
+            // Output
+                Console.WriteLine("Gross Annual Income Needed: $" +dblGrossAnnual);
+
+            Console.ReadKey();
+        }
+    }
+}
+
+Q7:
+/*
+ * Name: Ramin 
+ * Date: 02/24/25
+ * Title: Planet Weight Calculator
+ * Purpose: Find weight on other planets
+ */
+using System;
+
+namespace A2Q7PlntWghtCalcRA
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Declaration
+                string strUserName;
+                double dblUserWeight,dblMercuryWeight, dblVenusWeight, dblEarthWeight, dblMarsWeight, dblJupiterWeight, dblSaturnWeight, dblUranusWeight, dblNeptuneWeight, dblPlutoWeight;
+
+                // Gravity Constants
+                double dblMercuryGravity = 0.38;
+                double dblVenusGravity = 0.91;
+                double dblEarthGravity = 1.0;
+                double dblMarsGravity = 0.38;
+                double dblJupiterGravity = 2.6;
+                double dblSaturnGravity = 1.1;
+                double dblUranusGravity = 0.90;
+                double dblNeptuneGravity = 1.1;
+                double dblPlutoGravity = 0.07;
+
+            // Input
+                Console.Write("Name: ");
+                strUserName = Console.ReadLine();
+
+                Console.Write("Weight (Kg): ");
+                dblUserWeight = double.Parse(Console.ReadLine());
+
+            // Process
+                dblMercuryWeight = dblUserWeight * dblMercuryGravity;
+                dblVenusWeight = dblUserWeight * dblVenusGravity;
+                dblEarthWeight = dblUserWeight * dblEarthGravity;
+                dblMarsWeight = dblUserWeight * dblMarsGravity;
+                dblJupiterWeight = dblUserWeight * dblJupiterGravity;
+                dblSaturnWeight = dblUserWeight * dblSaturnGravity;
+                dblUranusWeight = dblUserWeight * dblUranusGravity;
+                dblNeptuneWeight = dblUserWeight * dblNeptuneGravity;
+                dblPlutoWeight = dblUserWeight * dblPlutoGravity;
+
+            // Output
+                Console.WriteLine("Hello, " +strUserName+ ", your weight on:");
+                Console.WriteLine("Mercury: " + dblMercuryWeight + "kg");
+                Console.WriteLine("Venus: " + dblVenusWeight + "kg");
+                Console.WriteLine("Earth: " + dblEarthWeight + "kg");
+                Console.WriteLine("Mars: " + dblMarsWeight + "kg");
+                Console.WriteLine("Jupiter: " + dblJupiterWeight + "kg");
+                Console.WriteLine("Saturn: " + dblSaturnWeight + "kg");
+                Console.WriteLine("Uranus: " + dblUranusWeight + "kg");
+                Console.WriteLine("Neptune: " + dblNeptuneWeight + "kg");
+                Console.WriteLine("Pluto: " + dblPlutoWeight + "kg");
+
+            Console.ReadKey();
+        }
+    }
+}

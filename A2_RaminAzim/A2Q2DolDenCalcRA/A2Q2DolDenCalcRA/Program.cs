@@ -14,13 +14,13 @@ namespace A2Q2DolDenCalcRA
         static void Main(string[] args)
         {
             // Declaration
-            string strUserInput;
-            int intHundo, intFifty, intTwenty, intTen, intFive, intToonie, intLoonie, intBal;
+                string strUserInput;
+                int intHundo, intFifty, intTwenty, intTen, intFive, intToonie, intLoonie, intBal;
 
             // Input
-            Console.Write("Enter the amount of money: ");
-            strUserInput = Console.ReadLine();
-            intBal = int.Parse(strUserInput);
+                Console.Write("Enter the amount of money: ");
+                strUserInput = Console.ReadLine();
+                intBal = Int32.Parse(strUserInput);
 
             // Process
 
@@ -52,13 +52,13 @@ namespace A2Q2DolDenCalcRA
                 intLoonie = intBal;
 
             // Output
-            Console.WriteLine("Hundred: " + intHundo);
-            Console.WriteLine("Fifty: " + intFifty);
-            Console.WriteLine("Twenty: " + intTwenty);
-            Console.WriteLine("Ten: " + intTen);
-            Console.WriteLine("Five: " + intFive);
-            Console.WriteLine("Toonie: " + intToonie);
-            Console.WriteLine("Loonie: " + intLoonie);
+                Console.WriteLine("Hundred: " + intHundo);
+                Console.WriteLine("Fifty: " + intFifty);
+                Console.WriteLine("Twenty: " + intTwenty);
+                Console.WriteLine("Ten: " + intTen);
+                Console.WriteLine("Five: " + intFive);
+                Console.WriteLine("Toonie: " + intToonie);
+                Console.WriteLine("Loonie: " + intLoonie);
 
             Console.ReadKey();
         }
