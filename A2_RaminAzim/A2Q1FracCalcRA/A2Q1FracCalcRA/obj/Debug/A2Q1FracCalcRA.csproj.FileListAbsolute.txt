@@ -1,0 +1,7 @@
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q1FracCalcRA\A2Q1FracCalcRA\bin\Debug\A2Q1FracCalcRA.exe.config
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q1FracCalcRA\A2Q1FracCalcRA\bin\Debug\A2Q1FracCalcRA.exe
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q1FracCalcRA\A2Q1FracCalcRA\bin\Debug\A2Q1FracCalcRA.pdb
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q1FracCalcRA\A2Q1FracCalcRA\obj\Debug\A2Q1FracCalcRA.csproj.AssemblyReference.cache
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q1FracCalcRA\A2Q1FracCalcRA\obj\Debug\A2Q1FracCalcRA.csproj.CoreCompileInputs.cache
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q1FracCalcRA\A2Q1FracCalcRA\obj\Debug\A2Q1FracCalcRA.exe
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q1FracCalcRA\A2Q1FracCalcRA\obj\Debug\A2Q1FracCalcRA.pdb

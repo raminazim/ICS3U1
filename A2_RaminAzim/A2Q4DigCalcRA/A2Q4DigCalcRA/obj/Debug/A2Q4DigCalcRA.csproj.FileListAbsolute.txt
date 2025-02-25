@@ -1,0 +1,7 @@
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q4DigCalcRA\A2Q4DigCalcRA\bin\Debug\A2Q4DigCalcRA.exe.config
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q4DigCalcRA\A2Q4DigCalcRA\bin\Debug\A2Q4DigCalcRA.exe
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q4DigCalcRA\A2Q4DigCalcRA\bin\Debug\A2Q4DigCalcRA.pdb
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q4DigCalcRA\A2Q4DigCalcRA\obj\Debug\A2Q4DigCalcRA.csproj.AssemblyReference.cache
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q4DigCalcRA\A2Q4DigCalcRA\obj\Debug\A2Q4DigCalcRA.csproj.CoreCompileInputs.cache
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q4DigCalcRA\A2Q4DigCalcRA\obj\Debug\A2Q4DigCalcRA.exe
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q4DigCalcRA\A2Q4DigCalcRA\obj\Debug\A2Q4DigCalcRA.pdb

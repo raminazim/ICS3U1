@@ -1,0 +1,7 @@
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q7PlntWghtCalcRA\A2Q7PlntWghtCalcRA\bin\Debug\A2Q7PlntWghtCalcRA.exe.config
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q7PlntWghtCalcRA\A2Q7PlntWghtCalcRA\bin\Debug\A2Q7PlntWghtCalcRA.exe
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q7PlntWghtCalcRA\A2Q7PlntWghtCalcRA\bin\Debug\A2Q7PlntWghtCalcRA.pdb
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q7PlntWghtCalcRA\A2Q7PlntWghtCalcRA\obj\Debug\A2Q7PlntWghtCalcRA.csproj.AssemblyReference.cache
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q7PlntWghtCalcRA\A2Q7PlntWghtCalcRA\obj\Debug\A2Q7PlntWghtCalcRA.csproj.CoreCompileInputs.cache
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q7PlntWghtCalcRA\A2Q7PlntWghtCalcRA\obj\Debug\A2Q7PlntWghtCalcRA.exe
+H:\My Drive\ICS3U1\A2_RaminAzim\A2Q7PlntWghtCalcRA\A2Q7PlntWghtCalcRA\obj\Debug\A2Q7PlntWghtCalcRA.pdb

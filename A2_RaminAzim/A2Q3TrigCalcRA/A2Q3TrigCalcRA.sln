@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A2Q3TrigCalcRA", "A2Q3TrigCalcRA\A2Q3TrigCalcRA.csproj", "{EE9528C2-C943-4771-B461-B13FA530E129}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE9528C2-C943-4771-B461-B13FA530E129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE9528C2-C943-4771-B461-B13FA530E129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE9528C2-C943-4771-B461-B13FA530E129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE9528C2-C943-4771-B461-B13FA530E129}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A84E0D8-C420-4938-88BF-30D4AF6F984A}
+	EndGlobalSection
+EndGlobal
