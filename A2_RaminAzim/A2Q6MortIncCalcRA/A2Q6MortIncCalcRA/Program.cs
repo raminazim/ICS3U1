@@ -60,6 +60,7 @@ namespace A2Q6MortIncCalcRA
 
                 // Annual Gross Income
                 dblGrossAnnual = dblGrossMonthly * 12;
+            dblGrossAnnual = Math.Round(dblGrossAnnual, 2);
 
             // Output
                 Console.WriteLine("Gross Annual Income Needed: $" +dblGrossAnnual);

@@ -38,10 +38,12 @@ namespace A2Q3TrigCalcRA
 
                 //Area
                 DblArea = 0.5 * dblSideA * dblSideB;
+                DblArea = Math.Round(DblArea,2);
 
                 //Perimeter
                 dblSideC = Math.Sqrt(Math.Pow(dblSideA, 2) + Math.Pow(dblSideB, 2));
                 dblPerimeter = dblSideA + dblSideB + dblSideC;
+                dblPerimeter = Math.Round(dblPerimeter,2);
 
             //Output
                 Console.WriteLine("Area: " +DblArea+strUnit+ "^2");

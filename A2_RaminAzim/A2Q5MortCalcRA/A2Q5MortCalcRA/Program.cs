@@ -43,6 +43,7 @@ namespace A2Q5MortCalcRA
                 dblNumerator = dblPrincipal * (dblRate / intPaymentPerYear);
                 dblDenominator = 1 - Math.Pow((1 + (dblRate / intPaymentPerYear)), -intTotalPayments);
                 dblMonthlyPayment = dblNumerator / dblDenominator;
+                dblMonthlyPayment = Math.Round(dblMonthlyPayment,2);
 
             // Output (formatted to 2 decimal places)
                 Console.WriteLine("Monthly Payment: $" + dblMonthlyPayment);

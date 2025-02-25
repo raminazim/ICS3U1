@@ -5,3 +5,10 @@ H:\My Drive\ICS3U1\A2_RaminAzim\A2Q6MortIncCalcRA\A2Q6MortIncCalcRA\obj\Debug\A2
 H:\My Drive\ICS3U1\A2_RaminAzim\A2Q6MortIncCalcRA\A2Q6MortIncCalcRA\obj\Debug\A2Q6MortIncCalcRA.csproj.CoreCompileInputs.cache
 H:\My Drive\ICS3U1\A2_RaminAzim\A2Q6MortIncCalcRA\A2Q6MortIncCalcRA\obj\Debug\A2Q6MortIncCalcRA.exe
 H:\My Drive\ICS3U1\A2_RaminAzim\A2Q6MortIncCalcRA\A2Q6MortIncCalcRA\obj\Debug\A2Q6MortIncCalcRA.pdb
+G:\My Drive\ICS3U1\A2_RaminAzim\A2Q6MortIncCalcRA\A2Q6MortIncCalcRA\obj\Debug\A2Q6MortIncCalcRA.csproj.AssemblyReference.cache
+G:\My Drive\ICS3U1\A2_RaminAzim\A2Q6MortIncCalcRA\A2Q6MortIncCalcRA\obj\Debug\A2Q6MortIncCalcRA.csproj.CoreCompileInputs.cache
+G:\My Drive\ICS3U1\A2_RaminAzim\A2Q6MortIncCalcRA\A2Q6MortIncCalcRA\obj\Debug\A2Q6MortIncCalcRA.exe
+G:\My Drive\ICS3U1\A2_RaminAzim\A2Q6MortIncCalcRA\A2Q6MortIncCalcRA\obj\Debug\A2Q6MortIncCalcRA.pdb
+G:\My Drive\ICS3U1\A2_RaminAzim\A2Q6MortIncCalcRA\A2Q6MortIncCalcRA\bin\Debug\A2Q6MortIncCalcRA.exe.config
+G:\My Drive\ICS3U1\A2_RaminAzim\A2Q6MortIncCalcRA\A2Q6MortIncCalcRA\bin\Debug\A2Q6MortIncCalcRA.exe
+G:\My Drive\ICS3U1\A2_RaminAzim\A2Q6MortIncCalcRA\A2Q6MortIncCalcRA\bin\Debug\A2Q6MortIncCalcRA.pdb
