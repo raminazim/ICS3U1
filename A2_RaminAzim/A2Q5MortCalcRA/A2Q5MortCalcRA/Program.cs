@@ -24,7 +24,7 @@ namespace A2Q5MortCalcRA
                 dblPrincipal = Double.Parse(strUserInput);
             
                 //Rate
-                Console.Write("Interest Rate (%): ");
+                Console.Write("Interest Rate (Decimal): 0.");
                 strUserInput = Console.ReadLine();
                 dblRate = Double.Parse(strUserInput) / 100;
 

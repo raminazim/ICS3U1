@@ -33,7 +33,7 @@ namespace A2Q6MortIncCalcRA
                 dblLoanAmount = dblHousePrice - dblDownPayment; //Loan amount
 
                 //Mortage Input
-                Console.Write("Interest Rate (%): ");
+                Console.Write("Interest Rate (Decimal): 0.");
                 strUserInput = Console.ReadLine();
                 dblRate = double.Parse(strUserInput) / 100;
 
