@@ -1,6 +1,5 @@
 All Answers For ICS3U1 @ RH King <br>
-<b> Don't Leak </b> <br>
-Special Thanks To Jahed, Arhaam, Thaygan, Rayyan, Nicholas & Zachary 🙏
+<b> Don't Leak </b>
 
 <h1>Find Code (Temporary)</h1>
 -> Click Assignment Folder
