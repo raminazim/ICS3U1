@@ -1,0 +1,7 @@
+G:\My Drive\ICS3U1\A3_RaminAzim\A3Q5NumMultRA\bin\Debug\A3Q5NumMultRA.exe.config
+G:\My Drive\ICS3U1\A3_RaminAzim\A3Q5NumMultRA\bin\Debug\A3Q5NumMultRA.exe
+G:\My Drive\ICS3U1\A3_RaminAzim\A3Q5NumMultRA\bin\Debug\A3Q5NumMultRA.pdb
+G:\My Drive\ICS3U1\A3_RaminAzim\A3Q5NumMultRA\obj\Debug\A3Q5NumMultRA.csproj.AssemblyReference.cache
+G:\My Drive\ICS3U1\A3_RaminAzim\A3Q5NumMultRA\obj\Debug\A3Q5NumMultRA.csproj.CoreCompileInputs.cache
+G:\My Drive\ICS3U1\A3_RaminAzim\A3Q5NumMultRA\obj\Debug\A3Q5NumMultRA.exe
+G:\My Drive\ICS3U1\A3_RaminAzim\A3Q5NumMultRA\obj\Debug\A3Q5NumMultRA.pdb

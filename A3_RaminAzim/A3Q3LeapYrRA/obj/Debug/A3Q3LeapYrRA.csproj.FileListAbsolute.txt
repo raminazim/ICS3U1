@@ -1,0 +1,7 @@
+G:\My Drive\ICS3U1\A3_RaminAzim\A3Q3LeapYrRA\bin\Debug\A3Q3LeapYrRA.exe.config
+G:\My Drive\ICS3U1\A3_RaminAzim\A3Q3LeapYrRA\bin\Debug\A3Q3LeapYrRA.exe
+G:\My Drive\ICS3U1\A3_RaminAzim\A3Q3LeapYrRA\bin\Debug\A3Q3LeapYrRA.pdb
+G:\My Drive\ICS3U1\A3_RaminAzim\A3Q3LeapYrRA\obj\Debug\A3Q3LeapYrRA.csproj.AssemblyReference.cache
+G:\My Drive\ICS3U1\A3_RaminAzim\A3Q3LeapYrRA\obj\Debug\A3Q3LeapYrRA.csproj.CoreCompileInputs.cache
+G:\My Drive\ICS3U1\A3_RaminAzim\A3Q3LeapYrRA\obj\Debug\A3Q3LeapYrRA.exe
+G:\My Drive\ICS3U1\A3_RaminAzim\A3Q3LeapYrRA\obj\Debug\A3Q3LeapYrRA.pdb
