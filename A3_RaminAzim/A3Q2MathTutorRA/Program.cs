@@ -19,9 +19,9 @@ namespace A3Q2MathTutorRA
             Random rnd = new Random();
             int intAns, intUserAns;
             string strUser;
-            int intNumOne = rnd.Next(1,11);
-            int intNumTwo = rnd.Next(1, 11);
-            int intOp = rnd.Next(1, 5);
+            int intNumOne = rnd.Next(0,11);
+            int intNumTwo = rnd.Next(0, 11);
+            int intOp = rnd.Next(0, 5);
 
             if (intOp == 1) //Basing on number generated, we give the user the operation
             {

@@ -31,13 +31,13 @@ namespace A3Q4RndNumGenRA
             intNumTwo = Int32.Parse(strUser);
 
             //Process/Output
-            if (intNumOne > intNumTwo) { //Finds whhich number is bigger
-                intLow = intNumTwo;
+            if (intNumOne > intNumTwo) { //Finds whhich number is bigger (-1 to make inclusive)
+                intLow = intNumTwo - 1;
                 intHigh = intNumOne;
             }
             else
             {
-                intLow = intNumOne;
+                intLow = intNumOne - 1 ;
                 intHigh = intNumTwo;
             }
             
