@@ -1,0 +1,14 @@
+G:\My Drive\ICS3U1\A4_RaminAzim\A4_RaminAzim\obj\Debug\A4_RaminAzim.csproj.AssemblyReference.cache
+G:\My Drive\ICS3U1\A4_RaminAzim\A4_RaminAzim\obj\Debug\A4_RaminAzim.csproj.CoreCompileInputs.cache
+G:\My Drive\ICS3U1\A4_RaminAzim\A4_RaminAzim\bin\Debug\A4_RaminAzim.exe.config
+G:\My Drive\ICS3U1\A4_RaminAzim\A4_RaminAzim\bin\Debug\A4_RaminAzim.exe
+G:\My Drive\ICS3U1\A4_RaminAzim\A4_RaminAzim\bin\Debug\A4_RaminAzim.pdb
+G:\My Drive\ICS3U1\A4_RaminAzim\A4_RaminAzim\obj\Debug\A4_RaminAzim.exe
+G:\My Drive\ICS3U1\A4_RaminAzim\A4_RaminAzim\obj\Debug\A4_RaminAzim.pdb
+I:\My Drive\ICS3U1\A4_RaminAzim\A4_RaminAzim\bin\Debug\A4_RaminAzim.exe.config
+I:\My Drive\ICS3U1\A4_RaminAzim\A4_RaminAzim\bin\Debug\A4_RaminAzim.exe
+I:\My Drive\ICS3U1\A4_RaminAzim\A4_RaminAzim\bin\Debug\A4_RaminAzim.pdb
+I:\My Drive\ICS3U1\A4_RaminAzim\A4_RaminAzim\obj\Debug\A4_RaminAzim.csproj.AssemblyReference.cache
+I:\My Drive\ICS3U1\A4_RaminAzim\A4_RaminAzim\obj\Debug\A4_RaminAzim.csproj.CoreCompileInputs.cache
+I:\My Drive\ICS3U1\A4_RaminAzim\A4_RaminAzim\obj\Debug\A4_RaminAzim.exe
+I:\My Drive\ICS3U1\A4_RaminAzim\A4_RaminAzim\obj\Debug\A4_RaminAzim.pdb
