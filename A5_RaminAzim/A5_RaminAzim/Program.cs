@@ -8,20 +8,6 @@ namespace A5_RaminAzim
 {
     internal class Program
     {
-        //Name: Zachary T.
-//Date: 2025-03-27
-//Title: Assignment 6 string programing
-//Purpose: utilize strings to make programs and use loops to help
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace A5ZacharyT
-{
-    internal class Program
-    {
         static void Main(string[] args)
         {
             //variable decloration
