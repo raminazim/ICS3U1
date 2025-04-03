@@ -470,7 +470,6 @@ namespace A5_RaminAzim
                 i += 3;
 
             }
-
             Console.WriteLine();
         }
     }
