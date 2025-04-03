@@ -1,6 +1,6 @@
 ﻿/* Name: Ramin Azim
  * Date: 03/26/25
- * Title: Assignment 7
+ * Title: Assignment 4
  *  Purpose: Menu driven program for questions given
  */
 using System;
@@ -19,7 +19,7 @@ namespace A4_RaminAzim
             while (true)
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("ASSIGNMENT 7");
+                Console.WriteLine("ASSIGNMENT 4");
 
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Menu(); //Display menu
