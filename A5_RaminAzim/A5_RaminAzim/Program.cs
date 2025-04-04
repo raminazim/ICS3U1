@@ -61,7 +61,7 @@ namespace A5_RaminAzim
             }
             Console.ReadKey();
         }
-        
+
         public static void Menu()
         {
             Console.WriteLine("1 - Number Display");
@@ -86,8 +86,8 @@ namespace A5_RaminAzim
             strNum = intNum.ToString();
 
             //Process/Output
-            for (int i = 0; i < strNum.Length; i++)
-            { 
+            for (int i = 0; i < strNum.Length; i++) //Basically checks the digit then writes the text then moves to the next one
+            {
                 if (strNum[i] == '0')
                 {
                     Console.Write("zero ");
@@ -144,7 +144,7 @@ namespace A5_RaminAzim
 
 
             //Process
-            strDigOne = strNum.Substring(3);
+            strDigOne = strNum.Substring(3); //Switches digits
             strDigFour = strNum.Substring(0, 1);
             strMiddle = strNum.Substring(1, 2);
             strDigThree = strNum.Substring(2);
@@ -155,12 +155,12 @@ namespace A5_RaminAzim
             intDigThree = int.Parse(strDigThree);
             intDigFour = int.Parse(strDigFour);
 
-            intDigOne = intDigOne * 1000;
+            intDigOne = intDigOne * 1000; //Insane Math
             intDigTwo = intDigTwo * 10;
             intDigThree = intDigThree ^ (intDigOne / 1000);
             intNum = intDigOne + intDigTwo + intDigFour + intDigThree;
 
-            intNum = intNum / 5;
+            intNum = intNum / 5; //Fixes Digits
             intNum = intNum + (intNum * 5);
 
             if (intNum > 9999)
@@ -189,21 +189,21 @@ namespace A5_RaminAzim
             intNum = Int32.Parse(Console.ReadLine());
 
             //Process
-            intHun = intNum / 100;
+            intHun = intNum / 100; //Seperates digits
             intTen = (intNum - (intHun * 100)) / 10;
             intOne = intNum - (intHun * 100) - (intTen * 10);
             intTeen = (intTen * 10) + intOne;
-            
+
             //Process/Output
             while (true)
             {
-                if (intNum == 1000)
+                if (intNum == 1000) //if number is 1000 then hard codes this
                 {
                     Console.Write("One Thousand");
                     break;
                 }
 
-                if (intHun == 1)
+                if (intHun == 1) //then checks for each digit for respective thingy, hard coded for teens
                 {
                     Console.Write("One Hundred ");
                 }
@@ -239,7 +239,7 @@ namespace A5_RaminAzim
                 {
                     Console.Write("Nine Hundred ");
                 }
-                
+
                 //Teens
                 if (10 < intTeen && intTeen < 20)
                 {
@@ -371,8 +371,8 @@ namespace A5_RaminAzim
             strSentence = Console.ReadLine();
 
             //Process/Output
-            for (int i = strSentence.Length - 1; i >= 0; i--)
-            { 
+            for (int i = strSentence.Length - 1; i >= 0; i--) //writes the sentence backwards and loops around different colours
+            {
                 if (intCount == 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -441,7 +441,7 @@ namespace A5_RaminAzim
             string strSentence;
 
             //Input
-            Console.WriteLine("Enter a sentence: ");
+            Console.WriteLine("Enter a sentence: "); //loops for sentence length and basically types in as the number of digits coded in the if statement
             strSentence = Console.ReadLine();
 
             //Process/Output
