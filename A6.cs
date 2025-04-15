@@ -24,14 +24,13 @@ namespace Program
                 Console.WriteLine("ASSIGNMENT 6");
 
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
-                Menu(); //Display menu
+                Menu(); 
                 string strUsr;
 
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write("Choose Option: ");
                 strUsr = Console.ReadLine();
 
-                //Execute corresponding function based on user input
                 if (strUsr == "1")
                 {
                     Q1RandStats();
@@ -50,7 +49,7 @@ namespace Program
                 }
  	            else
                 {
-                    Environment.Exit(0); //Exit the program
+                    Environment.Exit(0);
                 }
             Console.ReadKey();
 
@@ -67,7 +66,6 @@ namespace Program
             Console.WriteLine("Any Other Input - Exit");
         }
 
-        // Q1: Random Number Occurrence Stats
         public static void Q1RandStats()
         {
             while (true)
@@ -77,40 +75,46 @@ namespace Program
                 Random Rnd = new Random();
                 int[] intOccur;
                 int[] intCount = new int[9];
+                string strUsr;
 
                 //Input
-                Console.WriteLine("Enter Number: ");
-                intNum = Int32.Parse(Console.ReadLine());
+                while(true)
+                {
+                    Console.WriteLine("Enter Number: ");
+                    strUsr = Console.ReadLine();
+                    intNum = Int32.Parse(strUsr);
 
-                //Processing
-                intOccur = new int[intNum];
-                for (int i = 0; i < intNum; i++)
-                {
-                    intRnd = Rnd.Next(1, 10);
-                    intOccur[i] = intRnd;
-                    intCount[intRnd - 1]++;
-                }
+                    //Processing
+                    intOccur = new int[intNum];
+                    for (int i = 0; i < intNum; i++) //randomly generates numbers for each index of array
+                    {
+                        intRnd = Rnd.Next(1, 10);
+                        intOccur[i] = intRnd;
+                        intCount[intRnd - 1]++;
+                    } 
 
-                //Output
-                Console.WriteLine("Number: ----- Times Shown");
-                for (int i = 0; i < intCount.Length; i++)
-                {
-                    Console.WriteLine((i + 1) + " ---------- " + intCount[i]);
-                }
+                    //Output
+                    Console.WriteLine("Number: ----- Times Shown"); //outputs numbers
+                    for (int i = 0; i < intCount.Length; i++)
+                    {
+                        Console.WriteLine((i + 1) + " ---------- " + intCount[i]);
+                    }
 
-                Console.WriteLine("\nWhat would you like to do? \n 1. New Set \n 2. Exit");
-                intUser = Int32.Parse(Console.ReadLine());
-                if (intUser == 2)
-                {
-                    break;
-                }
-                else if (intUser == 1)
-                {
-                    Console.Clear();
-                }
-                else
-                {
-                    Console.WriteLine("Invalid Input");
+                    Console.WriteLine("1. New Set");
+                    Console.WriteLine("2. Exit");
+                    intUser = Int32.Parse(Console.ReadLine());
+                    if (intUser == 2)
+                    {
+                        break;
+                    }
+                    else if (intUser == 1) //runs again cuz in while loop
+                    {
+                        Console.Clear();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid Input");
+                    }
                 }
             }
         }
@@ -129,14 +133,15 @@ namespace Program
             int intDelete = 0, intChange = 0;
 
             //Input
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < 15; i++) //asks for number for array
             {
                 Console.WriteLine("Grade: ");
-                intGrade = Int32.Parse(Console.ReadLine());
+                strUsr = Console.ReadLine();
+                intGrade = Int32.Parse(strUsr);
                 intGrades[i] = intGrade;
                 if (i < intMin && intGrade == -99)
                 {
-                    Console.WriteLine("Must enter at least 5 grades.");
+                    Console.WriteLine("Min 5 Grades");
                     Console.Clear();
                 }
                 if (i > 5 && intGrade == -99)
@@ -147,7 +152,7 @@ namespace Program
             }
 
             //Processing
-            intSizedGrades = new int[intNumOfValues];
+            intSizedGrades = new int[intNumOfValues]; //copies values of array excluding -99
             int x = 0;
             for (int i = 0; i < intGrades.Length; i++)
             {
@@ -162,14 +167,21 @@ namespace Program
             //Processing/Output
             while (true)
             {
-                Console.WriteLine("1. Number of Grades \n2. List Grades \n3. Average\n4. Delete a Grade\n5. Change a Grade\n6. Add a Grade\n7. Exit");
-                intSelect = Int32.Parse(Console.ReadLine());
+                Console.WriteLine("1. Number of Grades");
+                Console.WriteLine("2.List Grades");
+                Console.WriteLine("3. Avg");
+                Console.WriteLine("4. Delete");
+                Console.WriteLine("5. Change Grade");
+                Console.WriteLine("6. Add Grade");
+                Console.WriteLine("7. Exit");
+                strUsr = Console.ReadLine();
+                intSelect = Int32.Parse(strUsr);
 
-                if (intSelect == 1)
+                if (intSelect == 1) //displays how many there are
                 {
                     Console.WriteLine("There are " + intSizedGrades.Length + " values");
                 }
-                else if (intSelect == 2)
+                else if (intSelect == 2) //lists
                 {
                     Console.WriteLine("Grades: ");
                     for (int i = 0; i < intSizedGrades.Length; i++)
@@ -177,7 +189,7 @@ namespace Program
                         Console.WriteLine(intSizedGrades[i]);
                     }
                 }
-                else if (intSelect == 3)
+                else if (intSelect == 3) //makes a total and divides by index lengh
                 {
                     intTotal = 0;
                     for (int i = 0; i < intSizedGrades.Length; i++)
@@ -187,15 +199,16 @@ namespace Program
                     intAvg = intTotal / intSizedGrades.Length;
                     Console.WriteLine("Average: " + intAvg);
                 }
-                else if (intSelect == 4)
+                else if (intSelect == 4) //puts all grades except chosen grade into new one, reset it and then put it back in
                 {
-                    Console.WriteLine("Which grade would you like to delete: ");
+                    Console.WriteLine("Index of Grade: ");
                     for (int i = 0; i < intSizedGrades.Length; i++)
                     {
                         Console.WriteLine(i + " : " + intSizedGrades[i]);
                     }
                     Console.Write("Select grade to delete: ");
-                    intDelete = Int32.Parse(Console.ReadLine());
+                    strUsr = Console.ReadLine("");
+                    intDelete = Int32.Parse(strUsr);
 
                     int[] intTemp = new int[intSizedGrades.Length - 1];
                     for (int i = 0; i < intDelete; i++)
@@ -216,18 +229,17 @@ namespace Program
                 }
                 else if (intSelect == 5)
                 {
-                    Console.WriteLine("Which grade would you like to change? ");
-                    for (int i = 0; i < intSizedGrades.Length; i++)
+                    for (int i = 0; i < intSizedGrades.Length; i++) //asks user for index  of grade and new grade and changes it
                     {
                         Console.WriteLine(i + " : " + intSizedGrades[i]);
                     }
-                    Console.Write("Select grade to change: ");
+                    Console.Write("Select Grade [Index]: ");
                     intChange = Int32.Parse(Console.ReadLine());
-                    Console.Write("What is the new grade: ");
+                    Console.Write("New Grade: ");
                     intChangedGrade = Int32.Parse(Console.ReadLine());
                     intSizedGrades[intChange] = intChangedGrade;
                 }
-                else if (intSelect == 6)
+                else if (intSelect == 6) 
                 {
                     intTemp = new int[intSizedGrades.Length + 1];
                     for (int i = 0; i < intSizedGrades.Length; i++)
@@ -272,7 +284,7 @@ namespace Program
                 //Input
                 Console.WriteLine("1. Show current deck");
                 Console.WriteLine("2. Shuffle Deck");
-                Console.WriteLine("3. Reset Deck to a Brand New Deck");
+                Console.WriteLine("3. Reset Deck");
                 Console.WriteLine("4. Exit");
                 intSelect = Int32.Parse(Console.ReadLine());
 
@@ -287,16 +299,16 @@ namespace Program
                 else if (intSelect == 2)
                 {
                     //Processing
-                    Random rng = new Random();
+                    Random rnd = new Random();
                     for (int i = strDeck.Length - 1; i > 0; i--)
                     {
-                        int j = rng.Next(i + 1); // Random index between 0 and i
+                        int j = rnd.Next(i + 1); //random index between 0 and i
                         string temp = strDeck[i];
                         strDeck[i] = strDeck[j];
                         strDeck[j] = temp;
                     }
 
-                    Console.WriteLine("Deck shuffled!");
+                    Console.WriteLine("Shuffled");
                 }
                 else if (intSelect == 3)
                 {
@@ -311,7 +323,7 @@ namespace Program
                         }
                     }
 
-                    Console.WriteLine("Deck reset!");
+                    Console.WriteLine("Reset");
                 }
                 else if (intSelect == 4)
                 {
@@ -335,11 +347,11 @@ namespace Program
             while (true)
             {
                 // Input
-                Console.WriteLine("1. Show current class list");
-                Console.WriteLine("2. Add a student");
-                Console.WriteLine("3. Delete a student");
-                Console.WriteLine("4. Change a student's name");
-                Console.WriteLine("5. Reset class list to default");
+                Console.WriteLine("1. Current Class List");
+                Console.WriteLine("2. Add Student");
+                Console.WriteLine("3. Delete Student");
+                Console.WriteLine("4. Change a Student Name");
+                Console.WriteLine("5. Reset List");
                 Console.WriteLine("6. Exit");
                 intSelect = Int32.Parse(Console.ReadLine());
 
@@ -363,16 +375,15 @@ namespace Program
                     }
                     strTempClassList[strTempClassList.Length - 1] = strName;
                     strClassList = strTempClassList;
-                    Console.WriteLine(strName + " has been added to the class list.");
+                    Console.WriteLine(strName + " added");
                 }
                 else if (intSelect == 3)
                 {
-                    Console.WriteLine("Select the student to delete:");
                     for (int i = 0; i < strClassList.Length; i++)
                     {
                         Console.WriteLine((i + 1) + ". " + strClassList[i]);
                     }
-                    Console.Write("Enter the number of the student to delete: ");
+                    Console.Write("Enter Index of Student: ");
                     intDelete = Int32.Parse(Console.ReadLine()) - 1;
                     if (intDelete >= 0 && intDelete < strClassList.Length)
                     {
@@ -386,7 +397,7 @@ namespace Program
                             strTempClassList[i - 1] = strClassList[i];
                         }
                         strClassList = strTempClassList;
-                        Console.WriteLine("Student has been deleted.");
+                        Console.WriteLine("Student deleted.");
                     }
                     else
                     {
@@ -395,19 +406,18 @@ namespace Program
                 }
                 else if (intSelect == 4)
                 {
-                    Console.WriteLine("Select the student to change the name:");
                     for (int i = 0; i < strClassList.Length; i++)
                     {
                         Console.WriteLine((i + 1) + ". " + strClassList[i]);
                     }
-                    Console.Write("Enter the number of the student to change: ");
+                    Console.Write("Enter Student Index: ");
                     intChange = Int32.Parse(Console.ReadLine()) - 1;
                     if (intChange >= 0 && intChange < strClassList.Length)
                     {
-                        Console.Write("Enter the new name for the student: ");
+                        Console.Write("Enter New Name: ");
                         strName = Console.ReadLine();
                         strClassList[intChange] = strName;
-                        Console.WriteLine("Student name has been changed.");
+                        Console.WriteLine("Name Changed");
                     }
                     else
                     {
@@ -417,7 +427,7 @@ namespace Program
                 else if (intSelect == 5)
                 {
                     strClassList = new string[1] { "DEFAULT" };
-                    Console.WriteLine("Class list has been reset to default.");
+                    Console.WriteLine("Reset");
                 }
                 else if (intSelect == 6)
                 {
