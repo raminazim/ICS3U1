@@ -20,17 +20,17 @@ namespace Program
         {
             while (true)
             {
-                // Declaration
+                //Declaration
                 int intNum, intRnd, intUser = 0;
                 Random Rnd = new Random();
                 int[] intOccur;
                 int[] intCount = new int[9];
 
-                // Input
+                //Input
                 Console.WriteLine("Enter Number: ");
                 intNum = Int32.Parse(Console.ReadLine());
 
-                // Processing
+                //Processing
                 intOccur = new int[intNum];
                 for (int i = 0; i < intNum; i++)
                 {
@@ -39,14 +39,13 @@ namespace Program
                     intCount[intRnd - 1]++;
                 }
 
-                // Output
+                //Output
                 Console.WriteLine("Number: ----- Times Shown");
                 for (int i = 0; i < intCount.Length; i++)
                 {
                     Console.WriteLine((i + 1) + " ---------- " + intCount[i]);
                 }
 
-                // User choice input/output
                 Console.WriteLine("\nWhat would you like to do? \n 1. New Set \n 2. Exit");
                 intUser = Int32.Parse(Console.ReadLine());
                 if (intUser == 2)
@@ -67,6 +66,7 @@ namespace Program
         // Q2: Grade Manager
         public static void Q2GradeMngr()
         {
+            //Declaration
             string strUsr;
             const int intMax = 15;
             const int intMin = 5;
@@ -76,7 +76,7 @@ namespace Program
             int intTotal = 0, intAvg = 0;
             int intDelete = 0, intChange = 0;
 
-            // Input
+            //Input
             for (int i = 0; i < 15; i++)
             {
                 Console.WriteLine("Grade: ");
@@ -94,7 +94,7 @@ namespace Program
                 intNumOfValues++;
             }
 
-            // Processing
+            //Processing
             intSizedGrades = new int[intNumOfValues];
             int x = 0;
             for (int i = 0; i < intGrades.Length; i++)
@@ -107,7 +107,7 @@ namespace Program
                 x++;
             }
 
-            // Output
+            //Processing/Output
             while (true)
             {
                 Console.WriteLine("1. Number of Grades \n2. List Grades \n3. Average\n4. Delete a Grade\n5. Change a Grade\n6. Add a Grade\n7. Exit");
@@ -115,12 +115,10 @@ namespace Program
 
                 if (intSelect == 1)
                 {
-                    // Output
                     Console.WriteLine("There are " + intSizedGrades.Length + " values");
                 }
                 else if (intSelect == 2)
                 {
-                    // Output
                     Console.WriteLine("Grades: ");
                     for (int i = 0; i < intSizedGrades.Length; i++)
                     {
@@ -129,19 +127,16 @@ namespace Program
                 }
                 else if (intSelect == 3)
                 {
-                    // Processing
                     intTotal = 0;
                     for (int i = 0; i < intSizedGrades.Length; i++)
                     {
                         intTotal += intSizedGrades[i];
                     }
                     intAvg = intTotal / intSizedGrades.Length;
-                    // Output
                     Console.WriteLine("Average: " + intAvg);
                 }
                 else if (intSelect == 4)
                 {
-                    // Input and Process
                     Console.WriteLine("Which grade would you like to delete: ");
                     for (int i = 0; i < intSizedGrades.Length; i++)
                     {
@@ -161,7 +156,6 @@ namespace Program
                     }
                     intSizedGrades = intTemp;
 
-                    // Output
                     Console.WriteLine("Updated Grades: ");
                     for (int i = 0; i < intSizedGrades.Length; i++)
                     {
@@ -170,7 +164,6 @@ namespace Program
                 }
                 else if (intSelect == 5)
                 {
-                    // Input and Process
                     Console.WriteLine("Which grade would you like to change? ");
                     for (int i = 0; i < intSizedGrades.Length; i++)
                     {
@@ -184,7 +177,6 @@ namespace Program
                 }
                 else if (intSelect == 6)
                 {
-                    // Input and Process
                     intTemp = new int[intSizedGrades.Length + 1];
                     for (int i = 0; i < intSizedGrades.Length; i++)
                     {
@@ -207,14 +199,13 @@ namespace Program
         // Q3: Card Deck Manager
         public static void Q3CDeckMngr()
         {
-            // Declaration
+            //Declaration
             string[] strRank = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
             string[] strSymbol = { "Hearts", "Diamonds", "Spades", "Clubs" };
             string[] strDeck = new string[strRank.Length * strSymbol.Length];
             int intIndex = 0;
             int intSelect = 0;
 
-            // Initial Deck Creation - Process
             for (int i = 0; i < strSymbol.Length; i++)
             {
                 for (int j = 0; j < strRank.Length; j++)
@@ -226,7 +217,7 @@ namespace Program
 
             while (true)
             {
-                // Input
+                //Input
                 Console.WriteLine("1. Show current deck");
                 Console.WriteLine("2. Shuffle Deck");
                 Console.WriteLine("3. Reset Deck to a Brand New Deck");
@@ -243,7 +234,7 @@ namespace Program
                 }
                 else if (intSelect == 2)
                 {
-                    // Processing - Shuffle
+                    //Processing
                     Random rng = new Random();
                     for (int i = strDeck.Length - 1; i > 0; i--)
                     {
@@ -257,7 +248,7 @@ namespace Program
                 }
                 else if (intSelect == 3)
                 {
-                    // Processing - Reset Deck
+                    //Processing
                     intIndex = 0;
                     for (int i = 0; i < strSymbol.Length; i++)
                     {
@@ -272,8 +263,7 @@ namespace Program
                 }
                 else if (intSelect == 4)
                 {
-                    // Exit
-                    return;
+                    return; //takes back to main
                 }
 
                 Console.ReadKey();
@@ -284,6 +274,7 @@ namespace Program
         // Q4: Class List Manager
         public static void Q4ClassMngr()
         {
+            //Declaration
             string strName;
             int intSelect = 0, intDelete = 0, intChange = 0;
             string[] strClassList = new string[1] { "DEFAULT" };
@@ -300,9 +291,9 @@ namespace Program
                 Console.WriteLine("6. Exit");
                 intSelect = Int32.Parse(Console.ReadLine());
 
+                //Processing/Output
                 if (intSelect == 1)
                 {
-                    // Output
                     Console.WriteLine("Current class list:");
                     for (int i = 0; i < strClassList.Length; i++)
                     {
@@ -311,7 +302,6 @@ namespace Program
                 }
                 else if (intSelect == 2)
                 {
-                    // Input and Process
                     Console.Write("Enter the name of the student to add: ");
                     strName = Console.ReadLine();
                     strTempClassList = new string[strClassList.Length + 1];
@@ -321,12 +311,10 @@ namespace Program
                     }
                     strTempClassList[strTempClassList.Length - 1] = strName;
                     strClassList = strTempClassList;
-                    // Output
                     Console.WriteLine(strName + " has been added to the class list.");
                 }
                 else if (intSelect == 3)
                 {
-                    // Input and Process
                     Console.WriteLine("Select the student to delete:");
                     for (int i = 0; i < strClassList.Length; i++)
                     {
@@ -346,7 +334,6 @@ namespace Program
                             strTempClassList[i - 1] = strClassList[i];
                         }
                         strClassList = strTempClassList;
-                        // Output
                         Console.WriteLine("Student has been deleted.");
                     }
                     else
@@ -356,7 +343,6 @@ namespace Program
                 }
                 else if (intSelect == 4)
                 {
-                    // Input and Process
                     Console.WriteLine("Select the student to change the name:");
                     for (int i = 0; i < strClassList.Length; i++)
                     {
@@ -369,7 +355,6 @@ namespace Program
                         Console.Write("Enter the new name for the student: ");
                         strName = Console.ReadLine();
                         strClassList[intChange] = strName;
-                        // Output
                         Console.WriteLine("Student name has been changed.");
                     }
                     else
@@ -379,15 +364,12 @@ namespace Program
                 }
                 else if (intSelect == 5)
                 {
-                    // Reset class list to default
                     strClassList = new string[1] { "DEFAULT" };
-                    // Output
                     Console.WriteLine("Class list has been reset to default.");
                 }
                 else if (intSelect == 6)
                 {
-                    // Exit
-                    return;
+                    return; //return to main
                 }
 
                 Console.ReadKey();
