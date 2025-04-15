@@ -1,4 +1,16 @@
+/*
+/ Name: Ramin
+/ Date: 04/14/25
+/ Ttile: Assignment 6
+/ Purpose: Menu driven app displaying work using arrays
+*/
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace A6_RaminAzim
 
 namespace Program
 {
