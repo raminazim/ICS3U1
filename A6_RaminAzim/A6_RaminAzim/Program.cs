@@ -137,7 +137,7 @@ namespace A6_RaminAzim {
                 //Input
                 for (int i = 0; i < 15; i++) //asks for number for array
                     {
-                        Console.WriteLine("Grade: ");
+                        Console.WriteLine("Grade (-99 to stop, min 5): ");
                         strUsr = Console.ReadLine();
                         intGrade = Int32.Parse(strUsr);
                         intGrades[i] = intGrade;
