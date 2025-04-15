@@ -52,9 +52,6 @@ namespace A6_RaminAzim {
                         Environment.Exit(0);
                     }
                     Console.ReadKey();
-
-
-                    Console.ReadKey();
                 }
             }
                 public static void Menu()
@@ -146,7 +143,7 @@ namespace A6_RaminAzim {
                             Console.WriteLine("Min 5 Grades");
                             Console.Clear();
                         }
-                        if (i > 5 && intGrade == -99)
+                        if (i >= intMin && intGrade == -99)
                         {
                             break;
                         }
