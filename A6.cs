@@ -6,13 +6,53 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            // Call any of the required methods here
-            // Q1RandStats();
-            // Q2GradeMngr();
-            // Q3CDeckMngr();
-            Q4ClassMngr();
+            while (true)
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("ASSIGNMENT 6");
+
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Menu(); //Display menu
+                string strUsr;
+
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("Choose Option: ");
+                strUsr = Console.ReadLine();
+
+                //Execute corresponding function based on user input
+                if (strUsr == "1")
+                {
+                    Q1RandStats();
+                }
+                else if (strUsr == "2")
+                {
+                    Q2GradeMngr();
+                }
+                else if (strUsr == "3")
+                {
+                    Q3DeckMngr();
+                }
+                else if (strUsr == "4")
+                {
+                    Q4ClassMngr();
+                }
+ 	            else
+                {
+                    Environment.Exit(0); //Exit the program
+                }
+            Console.ReadKey();
+
 
             Console.ReadKey();
+        }
+
+        public static void Menu()
+        {
+            Console.WriteLine("1 - Number Generator");
+            Console.WriteLine("2 - Grade Manager");
+            Console.WriteLine("3 -  Deck Manager");
+            Console.WriteLine("4 - Class Manager");
+            Console.WriteLine("Any Other Input - Exit");
         }
 
         // Q1: Random Number Occurrence Stats
