@@ -1,442 +1,411 @@
-﻿/*
-/ Name: Ramin
-/ Date: 04/14/25
-/ Ttile: Assignment 6
-/ Purpose: Menu driven app displaying work using arrays
-*/
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace A6_RaminAzim {
-
-    namespace Program
+namespace A7_RaminAzim
+{
+    /*
+    Create a program that stores and manages student grades in a classroom.
+    Ask the user first to see how many students the user would like to enter.
+    Then ask the user of the student’s Lastname, FirstName, and grade. You will
+    need to create three different arrays to store the mentioned values. You’re
+    trying to come up with something like this:
+    Last Name   FirstName   Grade
+    King        Ryan        87
+    Chan        Connie      85
+    Gupta       Sanjay      95
+    Rand        Annie       78
+    After the user inputs the data, using a menu, you should be able to:
+    a. Show Original Unsorted List
+    b. Show Sorted List by Last Name (A-Z)
+    c. Show Sorted List by First Name (A-Z)
+    d. Show Sorted List by Grades (High-Low)
+    e. Delete a student
+    f. Add a student
+    g. Student Average for the glass
+    h. Student with Highest Grade
+    i. Student with Lowest Grade
+    j. Median Student(s) Grade
+    k. Exit
+    Couple of important things to note is that first, you should keep the original
+    copy of the array entered by the user and have a copy of that array for the
+    sorting portion. You need a for loop to make a copy. That way you can
+    always go back and see what you started with. Secondly, as you sort
+    based on one array, other corresponding arrays must be sorted in the
+    same sequence. For example, if you sort by last name, the first name and
+    grades also must be in the same orde
+    */
+    internal class Program
     {
-        internal class Program
+        static string[] strFirstName;
+        static string[] strLastName;
+        static int[] intGrade;
+
+        static string[] strFirstNameOG;
+        static string[] strLastNameOG;
+        static int[] intGradeOG;
+
+        static int intStudentCount;
+        static void Main(string[] args)
         {
-            static void Main(string[] args)
+            string strInput;
+
+            //Asking For How Many Students For OG List
+            Console.WriteLine("How Many Students Entering");
+            intStudentCount = Int32.Parse(Console.ReadLine());
+
+            //Getting Size
+            strFirstName = new string[intStudentCount];
+            strLastName = new string[intStudentCount];
+            intGrade = new int[intStudentCount];
+
+            strFirstNameOG = new string[intStudentCount];
+            strLastNameOG = new string[intStudentCount];
+            intGradeOG = new int[intStudentCount];
+
+            //Getting OG List
+            for (int i = 0; i < intStudentCount; i++)
             {
-                while (true)
-                {
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("ASSIGNMENT 6");
+                Console.WriteLine("Enter First Name " + i + ": ");
+                strFirstName[i] = Console.ReadLine();
 
-                    Console.ForegroundColor = ConsoleColor.DarkBlue;
-                    Menu();
-                    string strUsr;
+                Console.WriteLine("Enter Last Name " + i + ": ");
+                strLastName[i] = Console.ReadLine();
 
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write("Choose Option: ");
-                    strUsr = Console.ReadLine();
-
-                    if (strUsr == "1")
-                    {
-                        Q1RandStats();
-                    }
-                    else if (strUsr == "2")
-                    {
-                        Q2GradeMngr();
-                    }
-                    else if (strUsr == "3")
-                    {
-                        Q3CDeckMngr();
-                    }
-                    else if (strUsr == "4")
-                    {
-                        Q4ClassMngr();
-                    }
-                    else
-                    {
-                        Environment.Exit(0);
-                    }
-                    Console.ReadKey();
-                }
+                Console.WriteLine("Enter Grade " + i + ": ");
+                intGrade[i] = Int32.Parse(Console.ReadLine());
             }
-                public static void Menu()
+
+            //Copying OG List To Perma Copy
+            for (int i = 0; i < intStudentCount; i++)
+            {
+                strFirstNameOG[i] = strFirstName[i];
+
+                strLastNameOG[i] = strLastName[i];
+
+                intGradeOG[i] = intGrade[i];
+            }
+            
+            //Asking User What To Do To List
+            while (true)
+            {
+                Console.WriteLine("\n1: Show Original Unsorted List");
+                Console.WriteLine("2: Show Sorted List by Last Name(A-Z)");
+                Console.WriteLine("3: Show Sorted List by First Name(A-Z)");
+                Console.WriteLine("4: Show Sorted List by Grades(High - Low)");
+                Console.WriteLine("5: Delete a student");
+                Console.WriteLine("6: Add a student");
+                Console.WriteLine("7: Student Average for the glass");
+                Console.WriteLine("8: Student with Highest Grade");
+                Console.WriteLine("9: Student with Lowest Grade");
+                Console.WriteLine("10: Median Student(s) Grade");
+                Console.WriteLine("Any Other Input: Exit");
+
+                strInput = Console.ReadLine();
+
+            
+                if (strInput == "1")
                 {
-                    Console.WriteLine("1 - Number Generator");
-                    Console.WriteLine("2 - Grade Manager");
-                    Console.WriteLine("3 -  Deck Manager");
-                    Console.WriteLine("4 - Class Manager");
-                    Console.WriteLine("Any Other Input - Exit");
+                    OriginalList();
+                }
+                else if (strInput == "2")
+                {
+                    SortLast();
+                }
+                else if (strInput == "3")
+                {
+                    SortFirst();
+                }
+                else if (strInput == "4")
+                {
+                    SortGrade();
+                }
+                else if (strInput == "5")
+                {
+                    Delete();
+                }
+                else if (strInput == "6")
+                {
+                    Add();
+                }
+                else if (strInput == "7")
+                {
+                    Avg();
+                }
+                else if (strInput == "8")
+                {
+                    GradeHigh();
+                }
+                else if (strInput == "9")
+                {
+                    GradeLow();
+                }
+                else if (strInput == "10" || strInput == "0") //muscle memory rules 
+                {
+                    Median();
+                }
+                else
+                {
+                    Environment.Exit(0);
                 }
 
-                public static void Q1RandStats()
-                {
-                    while (true)
-                    {
-                        //Declaration
-                        int intNum, intRnd, intUser = 0;
-                        Random Rnd = new Random();
-                        int[] intOccur;
-                        int[] intCount = new int[9];
-                        string strUsr;
-
-                        //Input
-                        while (true)
-                        {
-                            Console.WriteLine("Enter Number: ");
-                            strUsr = Console.ReadLine();
-                            intNum = Int32.Parse(strUsr);
-
-                            //Processing
-                            intOccur = new int[intNum];
-                            for (int i = 0; i < intNum; i++) //randomly generates numbers for each index of array
-                            {
-                                intRnd = Rnd.Next(1, 10);
-                                intOccur[i] = intRnd;
-                                intCount[intRnd - 1]++;
-                            }
-
-                            //Output
-                            Console.WriteLine("Number: ----- Times Shown"); //outputs numbers
-                            for (int i = 0; i < intCount.Length; i++)
-                            {
-                                Console.WriteLine((i + 1) + " ---------- " + intCount[i]);
-                            }
-
-                            Console.WriteLine("1. New Set");
-                            Console.WriteLine("2. Exit");
-                            intUser = Int32.Parse(Console.ReadLine());
-                            if (intUser == 2)
-                            {
-                                return;
-                            }
-                            else if (intUser == 1) //runs again cuz in while loop
-                            {
-                                Console.Clear();
-                            }
-                            else
-                            {
-                                Console.WriteLine("Invalid Input");
-                            }
-                        }
-                    }
-                }
-
-                // Q2: Grade Manager
-                public static void Q2GradeMngr()
-                {
-                    //Declaration
-                    string strUsr;
-                    const int intMax = 15;
-                    const int intMin = 5;
-                    int[] intGrades = new int[intMax];
-                    int[] intSizedGrades;
-                    int intGrade, intChangedGrade = 0, intSelect = 0, intNumOfValues = 0;
-                    int intTotal = 0, intAvg = 0;
-                    int intDelete = 0, intChange = 0;
-                    int[] intTemp;
-
-
-                //Input
-                for (int i = 0; i < 15; i++) //asks for number for array
-                    {
-                        Console.WriteLine("Grade (-99 to stop, min 5): ");
-                        strUsr = Console.ReadLine();
-                        intGrade = Int32.Parse(strUsr);
-                        intGrades[i] = intGrade;
-                        if (i < intMin && intGrade == -99)
-                        {
-                            Console.WriteLine("Min 5 Grades");
-                            Console.Clear();
-                        }
-                        if (i >= intMin && intGrade == -99)
-                        {
-                            break;
-                        }
-                        intNumOfValues++;
-                    }
-
-                    //Processing
-                    intSizedGrades = new int[intNumOfValues]; //copies values of array excluding -99
-                    int x = 0;
-                    for (int i = 0; i < intGrades.Length; i++)
-                    {
-                        if (intGrades[i] == -99)
-                        {
-                            break;
-                        }
-                        intSizedGrades[x] = intGrades[i];
-                        x++;
-                    }
-
-                    //Processing/Output
-                    while (true)
-                    {
-                        Console.WriteLine("1. Number of Grades");
-                        Console.WriteLine("2.List Grades");
-                        Console.WriteLine("3. Avg");
-                        Console.WriteLine("4. Delete");
-                        Console.WriteLine("5. Change Grade");
-                        Console.WriteLine("6. Add Grade");
-                        Console.WriteLine("7. Exit");
-                        strUsr = Console.ReadLine();
-                        intSelect = Int32.Parse(strUsr);
-
-                        if (intSelect == 1) //displays how many there are
-                        {
-                            Console.WriteLine("There are " + intSizedGrades.Length + " values");
-                        }
-                        else if (intSelect == 2) //lists
-                        {
-                            Console.WriteLine("Grades: ");
-                            for (int i = 0; i < intSizedGrades.Length; i++)
-                            {
-                                Console.WriteLine(intSizedGrades[i]);
-                            }
-                        }
-                        else if (intSelect == 3) //makes a total and divides by index lengh
-                        {
-                            intTotal = 0;
-                            for (int i = 0; i < intSizedGrades.Length; i++)
-                            {
-                                intTotal += intSizedGrades[i];
-                            }
-                            intAvg = intTotal / intSizedGrades.Length;
-                            Console.WriteLine("Average: " + intAvg);
-                        }
-                        else if (intSelect == 4) //puts all grades except chosen grade into new one, reset it and then put it back in
-                        {
-                            Console.WriteLine("Index of Grade: ");
-                            for (int i = 0; i < intSizedGrades.Length; i++)
-                            {
-                                Console.WriteLine(i + " : " + intSizedGrades[i]);
-                            }
-                            Console.Write("Select grade to delete: ");
-                            strUsr = Console.ReadLine();
-                            intDelete = Int32.Parse(strUsr);
-                            
-                        intTemp = new int[intSizedGrades.Length - 1];
-                            for (int i = 0; i < intDelete; i++)
-                            {
-                                intTemp[i] = intSizedGrades[i];
-                            }
-                            for (int i = intDelete + 1; i < intSizedGrades.Length; i++)
-                            {
-                                intTemp[i - 1] = intSizedGrades[i];
-                            }
-                            intSizedGrades = intTemp;
-
-                            Console.WriteLine("Updated Grades: ");
-                            for (int i = 0; i < intSizedGrades.Length; i++)
-                            {
-                                Console.WriteLine(intSizedGrades[i]);
-                            }
-                        }
-                        else if (intSelect == 5)
-                        {
-                            for (int i = 0; i < intSizedGrades.Length; i++) //asks user for index  of grade and new grade and changes it
-                            {
-                                Console.WriteLine(i + " : " + intSizedGrades[i]);
-                            }
-                            Console.Write("Select Grade [Index]: ");
-                            intChange = Int32.Parse(Console.ReadLine());
-                            Console.Write("New Grade: ");
-                            intChangedGrade = Int32.Parse(Console.ReadLine());
-                            intSizedGrades[intChange] = intChangedGrade;
-                        }
-                        else if (intSelect == 6)
-                        {
-                            intTemp = new int[intSizedGrades.Length + 1];
-                            for (int i = 0; i < intSizedGrades.Length; i++)
-                            {
-                                intTemp[i] = intSizedGrades[i];
-                            }
-                            Console.WriteLine("Enter grade to add: ");
-                            strUsr = Console.ReadLine();
-                            intTemp[intTemp.Length - 1] = Int32.Parse(strUsr);
-                            intSizedGrades = intTemp;
-                        }
-                        else if (intSelect == 7)
-                        {
-                            return;
-                        }
-                        Console.ReadKey();
-                        Console.Clear();
-                    }
-                }
-
-                // Q3: Card Deck Manager
-                public static void Q3CDeckMngr()
-                {
-                    //Declaration
-                    string[] strRank = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
-                    string[] strSymbol = { "Hearts", "Diamonds", "Spades", "Clubs" };
-                    string[] strDeck = new string[strRank.Length * strSymbol.Length];
-                    int intIndex = 0;
-                    int intSelect = 0;
-
-                    for (int i = 0; i < strSymbol.Length; i++)
-                    {
-                        for (int j = 0; j < strRank.Length; j++)
-                        {
-                            strDeck[intIndex] = strRank[j] + " of " + strSymbol[i];
-                            intIndex++;
-                        }
-                    }
-
-                    while (true)
-                    {
-                        //Input
-                        Console.WriteLine("1. Show current deck");
-                        Console.WriteLine("2. Shuffle Deck");
-                        Console.WriteLine("3. Reset Deck");
-                        Console.WriteLine("4. Exit");
-                        intSelect = Int32.Parse(Console.ReadLine());
-
-                        if (intSelect == 1)
-                        {
-                            // Output
-                            for (int i = 0; i < strDeck.Length; i++)
-                            {
-                                Console.WriteLine(strDeck[i]);
-                            }
-                        }
-                        else if (intSelect == 2)
-                        {
-                            //Processing
-                            Random rnd = new Random();
-                            for (int i = strDeck.Length - 1; i > 0; i--)
-                            {
-                                int j = rnd.Next(i + 1); //random index between 0 and i
-                                string temp = strDeck[i];
-                                strDeck[i] = strDeck[j];
-                                strDeck[j] = temp;
-                            }
-
-                            Console.WriteLine("Shuffled");
-                        }
-                        else if (intSelect == 3)
-                        {
-                            //Processing
-                            intIndex = 0;
-                            for (int i = 0; i < strSymbol.Length; i++)
-                            {
-                                for (int j = 0; j < strRank.Length; j++)
-                                {
-                                    strDeck[intIndex] = strRank[j] + " of " + strSymbol[i];
-                                    intIndex++;
-                                }
-                            }
-
-                            Console.WriteLine("Reset");
-                        }
-                        else if (intSelect == 4)
-                        {
-                            return; //takes back to main
-                        }
-
-                        Console.ReadKey();
-                        Console.Clear();
-                    }
-                }
-
-                // Q4: Class List Manager
-                public static void Q4ClassMngr()
-                {
-                    //Declaration
-                    string strName;
-                    int intSelect = 0, intDelete = 0, intChange = 0;
-                    string[] strClassList = new string[1] { "DEFAULT" };
-                    string[] strTempClassList;
-
-                    while (true)
-                    {
-                        // Input
-                        Console.WriteLine("1. Current Class List");
-                        Console.WriteLine("2. Add Student");
-                        Console.WriteLine("3. Delete Student");
-                        Console.WriteLine("4. Change a Student Name");
-                        Console.WriteLine("5. Reset List");
-                        Console.WriteLine("6. Exit");
-                        intSelect = Int32.Parse(Console.ReadLine());
-
-                        //Processing/Output
-                        if (intSelect == 1)
-                        {
-                            Console.WriteLine("Current class list:");
-                            for (int i = 0; i < strClassList.Length; i++)
-                            {
-                                Console.WriteLine((i + 1) + ". " + strClassList[i]);
-                            }
-                        }
-                        else if (intSelect == 2)
-                        {
-                            Console.Write("Enter the name of the student to add: ");
-                            strName = Console.ReadLine();
-                            strTempClassList = new string[strClassList.Length + 1];
-                            for (int i = 0; i < strClassList.Length; i++)
-                            {
-                                strTempClassList[i] = strClassList[i];
-                            }
-                            strTempClassList[strTempClassList.Length - 1] = strName;
-                            strClassList = strTempClassList;
-                            Console.WriteLine(strName + " added");
-                        }
-                    else if (intSelect == 3)
-                    {
-                        for (int i = 0; i < strClassList.Length; i++)
-                        {
-                            Console.WriteLine((i + 1) + ". " + strClassList[i]);
-                        }
-                        Console.Write("Enter Index of Student: ");
-                        intDelete = Int32.Parse(Console.ReadLine()) - 1;
-                        if (intDelete >= 0 && intDelete < strClassList.Length)
-                        {
-                            strTempClassList = new string[strClassList.Length - 1];
-                            for (int i = 0; i < intDelete; i++)  // Copy the students before the one to delete
-                            {
-                                strTempClassList[i] = strClassList[i];
-                            }
-                            for (int i = intDelete + 1; i < strClassList.Length; i++)  // Copy the students after the one to delete
-                            {
-                                strTempClassList[i - 1] = strClassList[i];
-                            }
-                            strClassList = strTempClassList;
-                            Console.WriteLine("Student deleted.");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid selection.");
-                        }
-                    }
-                    else if (intSelect == 4)
-                    {
-                        for (int i = 0; i < strClassList.Length; i++)
-                        {
-                            Console.WriteLine((i + 1) + ". " + strClassList[i]);
-                        }
-                        Console.Write("Enter Student Index: ");
-                        intChange = Int32.Parse(Console.ReadLine()) - 1;
-                        if (intChange >= 0 && intChange < strClassList.Length)
-                        {
-                            Console.Write("Enter New Name: ");
-                            strName = Console.ReadLine();
-                            strClassList[intChange] = strName;
-                            Console.WriteLine("Name Changed");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid selection.");
-                        }
-                    }
-                    else if (intSelect == 5)
-                        {
-                            strClassList = new string[1] { "DEFAULT" };
-                            Console.WriteLine("Reset");
-                        }
-                        else if (intSelect == 6)
-                        {
-                            return; //return to main
-                        }
-
-                        Console.ReadKey();
-                        Console.Clear();
-                    }
-                }
+                Console.ReadKey();
             }
         }
+        public static void OriginalList()
+        {
+            Console.WriteLine("\nOriginal List:");
+            Console.WriteLine("Last Name\tFirst Name\tGrade");
+
+            for (int i = 0; i < intStudentCount; i++)
+            {
+                Console.WriteLine(strLastNameOG[i] + "\t\t" + strFirstNameOG[i] + "\t\t" + intGradeOG[i]);
+            }
+
+            Console.WriteLine("\n Press Enter To Continue");
+        }
+        public static void SortLast()
+        {
+            string tempFirstName;
+            string tempLastName;
+            int tempGrade;
+
+            for (int i = 0; i < intStudentCount - 1; i++)
+            {
+                for (int j = 0; j < intStudentCount - i - 1; j++)
+                {
+                    //Compares
+                    if (String.Compare(strLastName[j], strLastName[j + 1]) > 0)
+                    {
+                        //Swap
+                        tempLastName = strLastName[j];
+                        strLastName[j] = strLastName[j + 1];
+                        strLastName[j + 1] = tempLastName;
+
+                        //Swap others for consistency
+                        tempFirstName = strFirstName[j];
+                        strFirstName[j] = strFirstName[j + 1];
+                        strFirstName[j + 1] = tempFirstName;
+
+                        tempGrade = intGrade[j];
+                        intGrade[j] = intGrade[j + 1];
+                        intGrade[j + 1] = tempGrade;
+                    }
+                }
+            }
+
+            Console.WriteLine("\nSorted by Last Name):");
+            Console.WriteLine("Last Name\tFirst Name\tGrade");
+            for (int i = 0; i < intStudentCount; i++)
+            {
+                Console.WriteLine(strLastName[i] + "\t\t" + strFirstName[i] + "\t\t" + intGrade[i]);
+            }
+            
+            Console.WriteLine("\n Press Enter To Continue");
+        }
+        public static void SortFirst()
+        {
+            string tempFirstName;
+            string tempLastName;
+            int tempGrade;
+
+            for (int i = 0; i < intStudentCount - 1; i++)
+            {
+                for (int j = 0; j < intStudentCount - i - 1; j++)
+                {
+                    //Compares
+                    if (String.Compare(strFirstName[j], strFirstName[j + 1]) > 0)
+                    {
+                        //Swap
+                        tempFirstName = strFirstName[j];
+                        strFirstName[j] = strFirstName[j + 1];
+                        strFirstName[j + 1] = tempFirstName;
+
+                        //Swap others for consistency
+                        tempLastName = strLastName[j];
+                        strLastName[j] = strLastName[j + 1];
+                        strLastName[j + 1] = tempLastName;
+
+                        tempGrade = intGrade[j];
+                        intGrade[j] = intGrade[j + 1];
+                        intGrade[j + 1] = tempGrade;
+                    }
+                }
+            }
+
+            Console.WriteLine("\nSorted by First Name:");
+            Console.WriteLine("Last Name\tFirst Name\tGrade");
+            for (int i = 0; i < intStudentCount; i++)
+            {
+                Console.WriteLine(strLastName[i] + "\t\t" + strFirstName[i] + "\t\t" + intGrade[i]);
+            }
+
+            Console.WriteLine("\n Press Enter To Continue");
+        }
+        public static void SortGrade()
+        {
+            string tempFirstName;
+            string tempLastName;
+            int tempGrade;
+
+            for (int i = 0; i < intStudentCount - 1; i++)
+            {
+                for (int j = 0; j < intStudentCount - i - 1; j++)
+                {
+                    //Compares
+                    if (intGrade[j].CompareTo(intGrade[j + 1]) < 0)
+                    {
+                        //Swap
+                        tempGrade = intGrade[j];
+                        intGrade[j] = intGrade[j + 1];
+                        intGrade[j + 1] = tempGrade;
+
+                        //Swap for consistency
+                        tempFirstName = strFirstName[j];
+                        strFirstName[j] = strFirstName[j + 1];
+                        strFirstName[j + 1] = tempFirstName;
+
+                        tempLastName = strLastName[j];
+                        strLastName[j] = strLastName[j + 1];
+                        strLastName[j + 1] = tempLastName;
+                    }
+                }
+            }
+
+            Console.WriteLine("\nSorted by Grade: ");
+            Console.WriteLine("Last Name\tFirst Name\tGrade");
+            for (int i = 0; i < intStudentCount; i++)
+            {
+                Console.WriteLine(strLastName[i] + "\t\t" + strFirstName[i] + "\t\t" + intGrade[i]);
+            }
+
+            Console.WriteLine("\n Press Enter To Continue");
+        }
+        public static void Delete()
+        {
+        }
+        public static void Add()
+        {
+        }
+
+        public static void Avg()
+        {
+            int intTotal = 0;
+            int intAvg = 0;
+
+            for (int i = 0;i < intStudentCount;i++)
+            {
+                intTotal = intTotal + intGrade[i];
+            }
+
+            intAvg = intTotal / intStudentCount;
+
+            Console.WriteLine("Average: " + intAvg);
+            
+            Console.WriteLine("\n Press Enter To Continue");
+        }
+        public static void GradeHigh()
+        {
+            string tempFirstName;
+            string tempLastName;
+            int tempGrade;
+
+            for (int i = 0; i < intStudentCount - 1; i++)
+            {
+                for (int j = 0; j < intStudentCount - i - 1; j++)
+                {
+                    if (intGrade[j].CompareTo(intGrade[j + 1]) < 0)
+                    {
+                        tempGrade = intGrade[j];
+                        intGrade[j] = intGrade[j + 1];
+                        intGrade[j + 1] = tempGrade;
+
+                        tempFirstName = strFirstName[j];
+                        strFirstName[j] = strFirstName[j + 1];
+                        strFirstName[j + 1] = tempFirstName;
+
+                        tempLastName = strLastName[j];
+                        strLastName[j] = strLastName[j + 1];
+                        strLastName[j + 1] = tempLastName;
+                    }
+                }
+            }
+
+            Console.WriteLine("\nHighest Grade:");
+            Console.WriteLine("Last Name\tFirst Name\tGrade");
+            Console.WriteLine(strLastName[0] + "\t\t" + strFirstName[0] + "\t\t" + intGrade[0]);
+
+            Console.WriteLine("\n Press Enter To Continue");
+        }
+        public static void GradeLow()
+        {
+            string tempFirstName;
+            string tempLastName;
+            int tempGrade;
+
+            for (int i = 0; i < intStudentCount - 1; i++)
+            {
+                for (int j = 0; j < intStudentCount - i - 1; j++)
+                {
+                    if (intGrade[j].CompareTo(intGrade[j + 1]) > 0)
+                    {
+                        tempGrade = intGrade[j];
+                        intGrade[j] = intGrade[j + 1];
+                        intGrade[j + 1] = tempGrade;
+
+                        tempFirstName = strFirstName[j];
+                        strFirstName[j] = strFirstName[j + 1];
+                        strFirstName[j + 1] = tempFirstName;
+
+                        tempLastName = strLastName[j];
+                        strLastName[j] = strLastName[j + 1];
+                        strLastName[j + 1] = tempLastName;
+                    }
+                }
+            }
+
+            Console.WriteLine("\nLowest Grade:");
+            Console.WriteLine("Last Name\tFirst Name\tGrade");
+            Console.WriteLine(strLastName[0] + "\t\t" + strFirstName[0] + "\t\t" + intGrade[0]);
+
+            Console.WriteLine("\n Press Enter To Continue");
+        }
+        public static void Median()
+        {
+            string tempFirstName;
+            string tempLastName;
+            int tempGrade;
+            int intMid = intStudentCount/2;
+
+            for (int i = 0; i < intStudentCount - 1; i++)
+            {
+                for (int j = 0; j < intStudentCount - i - 1; j++)
+                {
+                    if (intGrade[j].CompareTo(intGrade[j + 1]) > 0)
+                    {
+                        tempGrade = intGrade[j];
+                        intGrade[j] = intGrade[j + 1];
+                        intGrade[j + 1] = tempGrade;
+
+                        tempFirstName = strFirstName[j];
+                        strFirstName[j] = strFirstName[j + 1];
+                        strFirstName[j + 1] = tempFirstName;
+
+                        tempLastName = strLastName[j];
+                        strLastName[j] = strLastName[j + 1];
+                        strLastName[j + 1] = tempLastName;
+                    }
+                }
+            }
+
+            Console.WriteLine("\nMedian Grade:");
+            Console.WriteLine("Last Name\tFirst Name\tGrade");
+            Console.WriteLine(strLastName[intMid] + "\t\t" + strFirstName[intMid] + "\t\t" + intGrade[intMid]);
+
+            Console.WriteLine("\n Press Enter To Continue");
+        }
     }
+}
