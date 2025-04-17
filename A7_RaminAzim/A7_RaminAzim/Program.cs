@@ -146,9 +146,53 @@ namespace A7_RaminAzim
         }
         public static void OriginalList() 
         {
+            Console.WriteLine("\nOriginal List:");
+            Console.WriteLine("Last Name\tFirst Name\tGrade");
+
+            for (int i = 0; i < intStudentCount; i++)
+            {
+                Console.WriteLine(strLastNameOG[i] + "\t\t" + strFirstNameOG[i] + "\t\t" + intGradeOG[i]);
+            }
         }
         public static void SortLast()
         {
+            string tempFirstName;
+            string tempLastName;
+            int tempGrade;
+
+            // Bubble Sort by Last Name (A-Z)
+            for (int i = 0; i < intStudentCount - 1; i++)
+            {
+                for (int j = 0; j < intStudentCount - i - 1; j++)
+                {
+                    // Compare last names and swap if needed
+                    if (String.Compare(strLastName[j], strLastName[j + 1]) > 0)
+                    {
+                        // Swap last names
+                        tempLastName = strLastName[j];
+                        strLastName[j] = strLastName[j + 1];
+                        strLastName[j + 1] = tempLastName;
+
+                        // Swap first names to maintain consistency
+                        tempFirstName = strFirstName[j];
+                        strFirstName[j] = strFirstName[j + 1];
+                        strFirstName[j + 1] = tempFirstName;
+    
+                        // Swap grades to maintain consistency
+                        tempGrade = intGrade[j];
+                        intGrade[j] = intGrade[j + 1];
+                        intGrade[j + 1] = tempGrade;
+                    }
+                }
+            }
+
+    // Display the sorted list
+            Console.WriteLine("\nSorted List by Last Name (A-Z):");
+            Console.WriteLine("Last Name\tFirst Name\tGrade");
+            for (int i = 0; i < intStudentCount; i++)
+            {
+                Console.WriteLine(strLastName[i] + "\t\t" + strFirstName[i] + "\t\t" + intGrade[i]);
+            }
         }
         public static void SortFirst()
         {
