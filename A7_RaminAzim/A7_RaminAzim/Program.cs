@@ -285,11 +285,86 @@ namespace A7_RaminAzim
             Console.WriteLine("\n Press Enter To Continue");
         }
         public static void Delete()
-        {
-        }
+{
+    // Show the current list with indexes
+    Console.WriteLine("\nCurrent Students:");
+    Console.WriteLine("Index\tLast Name\tFirst Name\tGrade");
+    for (int i = 0; i < intStudentCount; i++)
+    {
+        Console.WriteLine(i + "\t" + strLastName[i] + "\t\t" + strFirstName[i] + "\t\t" + intGrade[i]);
+    }
+
+    Console.WriteLine("\nEnter the index of the student you want to delete:");
+    int intIndexDelete = Int32.Parse(Console.ReadLine());
+
+    // Create temporary arrays
+    string[] tempFirstName = new string[intStudentCount - 1];
+    string[] tempLastName = new string[intStudentCount - 1];
+    int[] tempGrade = new int[intStudentCount - 1];
+
+    int tempIndex = 0;
+
+    for (int i = 0; i < intStudentCount; i++)
+    {
+        if (i == intIndexDelete) continue;
+
+        tempFirstName[tempIndex] = strFirstName[i];
+        tempLastName[tempIndex] = strLastName[i];
+        tempGrade[tempIndex] = intGrade[i];
+        tempIndex++;
+    }
+
+    // Replace original arrays with temp arrays
+    strFirstName = tempFirstName;
+    strLastName = tempLastName;
+    intGrade = tempGrade;
+
+    intStudentCount--; // Decrease count
+
+    Console.WriteLine("\nStudent deleted successfully.");
+    Console.WriteLine("\n Press Enter To Continue");
+}
+
         public static void Add()
-        {
-        }
+{
+    Console.WriteLine("\nEnter First Name of New Student:");
+    string newFirstName = Console.ReadLine();
+
+    Console.WriteLine("Enter Last Name of New Student:");
+    string newLastName = Console.ReadLine();
+
+    Console.WriteLine("Enter Grade of New Student:");
+    int newGrade = Int32.Parse(Console.ReadLine());
+
+    // Create new arrays with size + 1
+    string[] tempFirstName = new string[intStudentCount + 1];
+    string[] tempLastName = new string[intStudentCount + 1];
+    int[] tempGrade = new int[intStudentCount + 1];
+
+    // Copy current data
+    for (int i = 0; i < intStudentCount; i++)
+    {
+        tempFirstName[i] = strFirstName[i];
+        tempLastName[i] = strLastName[i];
+        tempGrade[i] = intGrade[i];
+    }
+
+    // Add new student to the end
+    tempFirstName[intStudentCount] = newFirstName;
+    tempLastName[intStudentCount] = newLastName;
+    tempGrade[intStudentCount] = newGrade;
+
+    // Replace original arrays
+    strFirstName = tempFirstName;
+    strLastName = tempLastName;
+    intGrade = tempGrade;
+
+    intStudentCount++; // Increase count
+
+    Console.WriteLine("\nStudent added successfully.");
+    Console.WriteLine("\n Press Enter To Continue");
+}
+
 
         public static void Avg()
         {
